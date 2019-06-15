@@ -8,17 +8,23 @@ import org.jsoup.select.Elements;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         Connection connect = Jsoup.connect("http://www.onet.pl/");
+        List<String> wordsTable = new ArrayList<>();
+
         try {
             Document document = connect.get();
             Elements links = document.select("span.title");
+
             for (Element elem : links) {
-                System.out.println(elem.text());
+                System.out.println(elem.text();
             }
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
